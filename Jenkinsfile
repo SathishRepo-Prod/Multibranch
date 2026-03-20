@@ -5,7 +5,7 @@ pipeline {
             steps {
 			    sh '''
                 ssh ansible@172.31.20.150 "
-                cd /home/ansible/Multibranch
+                cd /home/ansible/Multi_branch_master
 				sh docker-build.sh"
 				'''
             }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh '''
                 ssh ansible@172.31.20.150 "
-                cd /home/ansible/Multibranch
+                cd /home/ansible/Multi_branch_master
 				sh docker-deploy.sh"
 				'''
             }
