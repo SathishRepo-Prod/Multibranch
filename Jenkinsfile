@@ -3,12 +3,18 @@ pipeline {
     stages {
         stage('Docker Build') {
             steps {
-                sh 'sh docker-build.sh'
+			    sh '''
+                ssh ansible@172.31.20.150 "
+                sh docker-build.sh"
+				'''
             }
         }
         stage('Deploy Env') {
             steps {
-                sh 'sh docker-deploy.sh'
+                sh '''
+                ssh ansible@172.31.20.150 "
+                sh docker-deploy.sh"
+				'''
             }
         }
     }
