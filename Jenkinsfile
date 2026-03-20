@@ -5,7 +5,8 @@ pipeline {
             steps {
 			    sh '''
                 ssh ansible@172.31.20.150 "
-                sh docker-build.sh"
+                cd /home/ansible/busapp-multi-pipeline-branch
+				sh docker-build.sh"
 				'''
             }
         }
@@ -13,7 +14,8 @@ pipeline {
             steps {
                 sh '''
                 ssh ansible@172.31.20.150 "
-                sh docker-deploy.sh"
+                cd /home/ansible/busapp-multi-pipeline-branch
+				sh docker-deploy.sh"
 				'''
             }
         }
