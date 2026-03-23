@@ -2,5 +2,6 @@
 
 version=Testing
 
-sudo docker build -t sathishdevops007/busapp:${version} -f /home/ansible/app/dockerfile
+cd /home/ansible/app
+sudo docker build -t sathishdevops007/busapp:${version} .
 sudo docker push sathishdevops007/busapp:${version}
